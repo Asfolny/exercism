@@ -1,0 +1,7 @@
+# IDE book keeping
+.idea
+
+
+# COBOL autogen
+cobol/**/test
+cobol/**/test.cob
