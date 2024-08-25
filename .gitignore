@@ -5,3 +5,6 @@
 # COBOL autogen
 cobol/**/test
 cobol/**/test.cob
+
+# python
+__pycache__
