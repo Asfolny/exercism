@@ -8,3 +8,7 @@ cobol/**/test.cob
 
 # python
 __pycache__
+
+# Java
+.gradle
+build
