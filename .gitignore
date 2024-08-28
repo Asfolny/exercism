@@ -15,3 +15,8 @@ java/**/build
 
 # Rust
 rust/**/target
+
+# SQLite
+sqlite/**/output.json
+sqlite/**/user_output.md
+
