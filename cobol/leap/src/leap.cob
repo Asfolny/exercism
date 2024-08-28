@@ -7,12 +7,18 @@
        01 DIVIDER PIC 9(3).
        PROCEDURE DIVISION.
        LEAP.
-           IF FUNCTION MOD(WS-YEAR, 400) = 0 OR
-              (FUNCTION MOD(WS-YEAR, 100) NOT = 0 AND
-                 FUNCTION MOD(WS-YEAR, 4) = 0) THEN
-              MOVE 1 TO WS-RESULT 
+           IF FUNCTION MOD(WS-YEAR, 100) > 0 THEN
+              MOVE 4 TO DIVIDER
            ELSE
-              MOVE 0 TO WS-RESULT
+              MOVE 400 TO DIVIDER
            END-IF.
+           PERFORM IS-LEAP.
        LEAP-EXIT.
            GOBACK.
+
+       IS-LEAP.
+           IF FUNCTION MOD(WS-YEAR, DIVIDER) > 0 THEN
+              MOVE 0 TO WS-RESULT
+           ELSE
+              MOVE 1 TO WS-RESULT
+           END-IF.
