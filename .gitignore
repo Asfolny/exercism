@@ -5,6 +5,8 @@
 # COBOL autogen
 cobol/**/test
 cobol/**/test.cob
+cobol/**/ParserErrorLog.txt
+cobol/**/ALLTESTS
 
 # python
 python/**/__pycache__
