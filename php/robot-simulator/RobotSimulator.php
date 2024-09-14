@@ -9,17 +9,24 @@ enum Direction: string
 }
 
 class RobotSimulator
-{
-    public const DIRECTION_NORTH = "north";
-    public const DIRECTION_SOUTH = "south";
-    public const DIRECTION_EAST = "east";
-    public const DIRECTION_WEST = "west";
-    
+{    
     /**
     * @param int[] $position
     * @param string $direction 
     */
-    public function __construct(public array $position, public string $direction) {}
+    public function __construct(public array $position, public string $direction) {
+        var_dump($position, $direction);
+    }
+
+    public function getPosition(): array
+    {
+        return $this->position;
+    }
+
+    public function getDirection(): string
+    {
+        return $this->direction;
+    }
 
     public function turnRight(): self
     {
@@ -48,8 +55,8 @@ class RobotSimulator
           $change = match(Direction::tryFrom($this->direction)) {
             Direction::South => [0, -1],
             Direction::North => [0, 1],
-            Direction::East => [1, 0],
-            Direction::West => [-1, 0]
+            Direction::West => [-1, 0],
+            Direction::East => [1, 0]
         };
 
         $this->position = [
