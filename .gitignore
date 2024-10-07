@@ -22,3 +22,6 @@ rust/**/target
 sqlite/**/output.json
 sqlite/**/user_output.md
 
+# Kotlin
+kotlin/**/.gradle
+kotlin/**/build
