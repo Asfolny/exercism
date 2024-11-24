@@ -1,10 +1,9 @@
 <?php declare(strict_types=1);
 
-function encode(string $text): string
+function encode(string $text, int $boxSize = 5): string
 {
     $cipherKey = str_split("zyxwvutsrqponmlkjihgfedcba");
     $encoded = "";
-    $boxSize = 5;
     $added = 0;
     foreach(str_split($text) as $char) {
         $char = strtolower($char);
@@ -27,4 +26,8 @@ function encode(string $text): string
     }
 
     return $encoded;
+}
+
+function decode(string $text): string {
+    return encode($text, -1);
 }
