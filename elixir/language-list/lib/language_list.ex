@@ -3,15 +3,9 @@ defmodule LanguageList do
 
   def add(list, language), do: [language | list]
 
-  def remove(list) do
-    [head | tail] = list
-    tail
-  end
+  def remove([_ | tail]), do: tail
 
-  def first(list) do
-    [head | tail] = list
-    head
-  end
+  def first([head | _]), do: head
 
   def count(list), do: length(list)
 
