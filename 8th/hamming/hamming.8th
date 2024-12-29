@@ -1,0 +1,8 @@
+: distance \ s1 s2 -- n
+  s:len2 n:= if
+    ( over null s:/ ) 2 times 0 >r
+    ( s:= nip !if r> n:1+ >r then ) a:2each
+    ' 2drop 2 times r>
+  else
+    2drop null
+  then ;
